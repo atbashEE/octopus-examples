@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:sec="http://www.c4j.be/secure"
+>
+
+<h:head>
+    <title>Octopus cookbook</title>
+
+</h:head>
+
+<h:body>
+
+    authenticated user : #{loggedInUser} <br/>
+    Has the user demo access?
+    <h:outputText value="Yes">
+        <sec:securedComponent permission="ACCESS_DEMO"/>
+    </h:outputText>
+    <h:outputText value="NO !">
+        <sec:securedComponent not="true" permission="ACCESS_DEMO"/>
+    </h:outputText> <br/>
+    <h:outputText value="This should never be shown because no user has the special permission">
+        <sec:securedComponent permission="TOP_SECRET"/>
+    </h:outputText>
+
+</h:body>
+
+</html>

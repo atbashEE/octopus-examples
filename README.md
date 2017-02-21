@@ -1,5 +1,5 @@
 # octopus-examples
-Examples for the Octopus framework (JAVA EE Security framework)
+Examples for the Octopus framework (Java EE Security framework)
 
 
 ## gitbook directory
@@ -13,6 +13,14 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 /ex1_alt2 [Custom file for the login page](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter1.html) alternative 2
 
 /ex1_alt3 [Alternative name for the loginBean](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter1.html) alternative 3
+
+/ex2 [Securing JSF Components](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter2.html) 
+
+/ex2_alt1 [Securing JSF Components](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter2.html) alternative 1
+
+/ex2_alt2 [Securing JSF Components](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter2.html) alternative 2
+
+/ex2_alt3 [Securing JSF Components](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter2.html) alternative 3
 
 ## tests directory
 

@@ -1,0 +1,59 @@
+<!--
+
+    Copyright 2017 Rudy De Busscher (www.atbash.be)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.c4j.be/secure"
+>
+
+<body>
+<h:head>
+    <title>Demo App 1</title>
+    <meta http-equiv="content-type" content="text/xhtml; charset=UTF-8"/>
+    <h:outputStylesheet library="css" name="starter.css"/>
+</h:head>
+
+<h:body>
+    <div id="header">Welcome #{loggedInUser} <h:form id="logoutFrm"><h:commandLink id="logoutLink"
+                                                                                   actionListener="#{loginBean.logout()}">Logout</h:commandLink>
+    </h:form></div>
+    Secured page. Demo 1 <br/>
+    username = #{userBean.userName} <br/>
+
+    <br/>
+    <h:outputText value="permission demo_acces">
+        <sec:securedComponent permission="DEMO_ACCESS"/>
+    </h:outputText>
+    <br/>
+    <h:outputText value="Permission demo_write">
+        <sec:securedComponent permission="DEMO_WRITE"/>
+    </h:outputText>
+    <br/>
+    <h:outputText value="Permission security_admin">
+        <sec:securedComponent permission="SECURITY_ADMIN"/>
+    </h:outputText>
+
+    <h:form>
+        <p:commandButton value="Logout" actionListener="#{loginBean.logout}" ajax="false"/>
+    </h:form>
+
+</h:body>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Octopus demo Session Hijacking protection
+Copyright by Rudy De Busscher  - https://www.atbash.be
+
+------------------------------------------------------------------------
+See the file LICENSE.txt
+------------------------------------------------------------------------

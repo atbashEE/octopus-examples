@@ -1,6 +1,13 @@
 # octopus-examples
 Examples for the Octopus framework (Java EE Security framework)
 
+## demo directory
+
+Contains some code examples of features of Octopus.
+
+/scs [Self-Contained System demo](https://www.atbash.be/2017/09/28/release_octopus_v097/) _see section Self-Contained Systems in the blog_
+
+/sessionHijacking [Session Hijacking protection demo](http://www.atbash.be/2017/11/06/session-hijacking-protection-with-octopus-framework/)
 
 ## gitbook directory
 

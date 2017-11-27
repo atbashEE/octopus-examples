@@ -141,12 +141,5 @@
         <primefaces.version>6.0</primefaces.version>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>license</id>
-            <build>
-            </build>
 
-        </profile>
-    </profiles>
 </project>

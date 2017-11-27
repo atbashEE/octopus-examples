@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.atbash.ee.security.octopus.book;
+package be.atbash.ee.security.octopus.book.ex2;
 
 import be.c4j.ee.security.model.UserPrincipal;
+import be.c4j.ee.security.permission.NamedDomainPermission;
+import be.c4j.ee.security.permission.PermissionLookup;
 import be.c4j.ee.security.realm.AuthenticationInfoBuilder;
 import be.c4j.ee.security.realm.AuthorizationInfoBuilder;
 import be.c4j.ee.security.realm.SecurityDataProvider;
@@ -26,6 +28,9 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -57,8 +62,18 @@ public class ApplicationSecurityData implements SecurityDataProvider {
         AuthorizationInfoBuilder builder = new AuthorizationInfoBuilder();
         UserPrincipal principal = (UserPrincipal) principalCollection.getPrimaryPrincipal();
         if ("admin".equalsIgnoreCase(principal.getUserName())) {
-            builder.addPermission("demo:*:*");
+            builder.addPermission(AppPermission.ACCESS.name());
         }
         return builder.build();
+    }
+
+    @Produces
+    public PermissionLookup<AppPermission> defineLookup() {
+        List<NamedDomainPermission> allPermissions = new ArrayList<>();
+        allPermissions.add(new NamedDomainPermission(AppPermission.ACCESS_DEMO.name(), "access:demo:*"));
+        allPermissions.add(new NamedDomainPermission(AppPermission.ACCESS.name(), "access:*:*"));
+        allPermissions.add(new NamedDomainPermission(AppPermission.TOP_SECRET.name(), "top:secret:*"));
+
+        return new PermissionLookup<AppPermission>(allPermissions, AppPermission.class);
     }
 }

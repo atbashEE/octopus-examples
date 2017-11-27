@@ -1,8 +1,21 @@
-package be.rubus.octopus.book.ex2;
+/*
+ * Copyright 2017 Rudy De Busscher
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package be.atbash.ee.security.octopus.book.ex2;
 
 import be.c4j.ee.security.model.UserPrincipal;
-import be.c4j.ee.security.permission.NamedDomainPermission;
-import be.c4j.ee.security.permission.StringPermissionLookup;
 import be.c4j.ee.security.realm.AuthenticationInfoBuilder;
 import be.c4j.ee.security.realm.AuthorizationInfoBuilder;
 import be.c4j.ee.security.realm.SecurityDataProvider;
@@ -13,9 +26,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.subject.PrincipalCollection;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -47,17 +57,8 @@ public class ApplicationSecurityData implements SecurityDataProvider {
         AuthorizationInfoBuilder builder = new AuthorizationInfoBuilder();
         UserPrincipal principal = (UserPrincipal) principalCollection.getPrimaryPrincipal();
         if ("admin".equalsIgnoreCase(principal.getUserName())) {
-            builder.addPermission("access");
+            builder.addPermission("demo:*:*");
         }
         return builder.build();
-    }
-
-    @Produces
-    public StringPermissionLookup defineLookup() {
-        List<NamedDomainPermission> allPermissions = new ArrayList<>();
-        allPermissions.add(new NamedDomainPermission("demoAccess", "access:demo:*"));
-        allPermissions.add(new NamedDomainPermission("access", "access:*:*"));
-        allPermissions.add(new NamedDomainPermission("specialPermission", "top:secret:*"));
-        return new StringPermissionLookup(allPermissions);
     }
 }

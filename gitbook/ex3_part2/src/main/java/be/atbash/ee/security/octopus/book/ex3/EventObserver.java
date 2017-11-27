@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 Rudy De Busscher (${email})
+ * Copyright 2017 Rudy De Busscher
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rubus.octopus.book.ex3;
+package be.atbash.ee.security.octopus.book.ex3;
 
 import be.c4j.ee.security.event.LogonEvent;
 import be.c4j.ee.security.event.LogonFailureEvent;

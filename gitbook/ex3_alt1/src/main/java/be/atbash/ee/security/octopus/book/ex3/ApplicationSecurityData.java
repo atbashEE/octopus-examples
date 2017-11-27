@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 Rudy De Busscher (${email})
+ * Copyright 2017 Rudy De Busscher
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rubus.octopus.book.ex3;
+package be.atbash.ee.security.octopus.book.ex3;
 
 import be.c4j.ee.security.realm.AuthenticationInfoBuilder;
-import be.c4j.ee.security.realm.AuthorizationInfoBuilder;
 import be.c4j.ee.security.realm.SecurityDataProvider;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -41,6 +40,7 @@ public class ApplicationSecurityData implements SecurityDataProvider {
 
             AuthenticationInfoBuilder authenticationInfoBuilder = new AuthenticationInfoBuilder();
             authenticationInfoBuilder.principalId(principalId++).name(authenticationToken.getPrincipal().toString());
+            authenticationInfoBuilder.userName(authenticationToken.getPrincipal().toString());
             // TODO: Change for production. Here we use username as password
             authenticationInfoBuilder.password(usernamePasswordToken.getUsername());
 
@@ -54,5 +54,4 @@ public class ApplicationSecurityData implements SecurityDataProvider {
     public AuthorizationInfo getAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
-
 }

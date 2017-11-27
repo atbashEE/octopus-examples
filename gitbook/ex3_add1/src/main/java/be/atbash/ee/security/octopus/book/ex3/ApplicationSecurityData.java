@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 Rudy De Busscher (${email})
+ * Copyright 2017 Rudy De Busscher
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package be.rubus.octopus.book.ex3;
+package be.atbash.ee.security.octopus.book.ex3;
 
 import be.c4j.ee.security.realm.AuthenticationInfoBuilder;
 import be.c4j.ee.security.realm.AuthorizationInfoBuilder;
@@ -39,16 +39,13 @@ public class ApplicationSecurityData implements SecurityDataProvider {
         if (authenticationToken instanceof UsernamePasswordToken) {
             UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
 
-            if (authenticationToken.getPrincipal().toString().length() > 2) {
-                AuthenticationInfoBuilder authenticationInfoBuilder = new AuthenticationInfoBuilder();
-                authenticationInfoBuilder.principalId(principalId++).name(authenticationToken.getPrincipal().toString());
-                authenticationInfoBuilder.userName(authenticationToken.getPrincipal().toString());
-                authenticationInfoBuilder.name(authenticationToken.getPrincipal().toString());
-                // TODO: Change for production. Here we use username as password
-                authenticationInfoBuilder.password(usernamePasswordToken.getUsername());
+            AuthenticationInfoBuilder authenticationInfoBuilder = new AuthenticationInfoBuilder();
+            authenticationInfoBuilder.principalId(principalId++).name(authenticationToken.getPrincipal().toString());
+            authenticationInfoBuilder.userName(authenticationToken.getPrincipal().toString());
+            // TODO: Change for production. Here we use username as password
+            authenticationInfoBuilder.password(usernamePasswordToken.getUsername());
 
-                return authenticationInfoBuilder.build();
-            }
+            return authenticationInfoBuilder.build();
         }
 
         return null;

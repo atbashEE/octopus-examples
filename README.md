@@ -35,7 +35,13 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 
 /ex3_alt1 [Specify logout page](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter3.html) Chapter3 alternative 1
 
-/ex3_add1 [Audit user uRL requests](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter3.html)
+/ex3_add1 [Audit user URL requests](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter3.html)
+
+/ex4 [Securing EJB methods](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter4.html)
+
+/ex5_srv [Server app with JAX-RS endpoint](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter5.html) _Building Octopus security context from JT within header_
+
+/ex5 [Client app calling JAX-RS endpoint](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter5.html) _Adding JWT with authentication/authorization info about user automatically to JAX-RS client call_
 
 ## tests directory
 

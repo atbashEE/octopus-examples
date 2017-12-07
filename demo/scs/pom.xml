@@ -62,62 +62,42 @@
 
     <build>
         <plugins>
+
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
+                    <header>src/etc/headerTemplate.tpl</header>
+                    <properties>
+                        <owner>Rudy De Busscher</owner>
+                        <site>www.atbash.be</site>
+                        <year>2017</year>
+                        <aggregate>true</aggregate>
+                    </properties>
+                    <excludes>
+                        <exclude>**/README</exclude>
+                        <exclude>**/LICENSE.txt</exclude>
+                        <exclude>**/NOTICE.txt</exclude>
+                        <exclude>**/NOTICE</exclude>
+                        <exclude>**/*.md</exclude>
+                        <exclude>**/*.jwkset</exclude>
+                    </excludes>
+                    <mapping>
+                        <java>SLASHSTAR_STYLE</java>
+                        <css>SLASHSTAR_STYLE</css>
+                    </mapping>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>license</id>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>com.mycila</groupId>
-                        <artifactId>license-maven-plugin</artifactId>
-                        <version>3.0</version>
-                        <configuration>
-                            <header>header_template.tpl</header>
-                            <properties>
-                                <owner>Rudy De Busscher</owner>
-                                <site>www.atbash.be</site>
-                                <year>2017</year>
-                                <aggregate>true</aggregate>
-                            </properties>
-                            <excludes>
-                                <exclude>**/README</exclude>
-                                <exclude>**/LICENSE.txt</exclude>
-                                <exclude>**/NOTICE.txt</exclude>
-                                <exclude>**/NOTICE</exclude>
-                                <exclude>**/*.md</exclude>
-                                <exclude>**/*.jwkset</exclude>
-                            </excludes>
-                            <mapping>
-                                <java>SLASHSTAR_STYLE</java>
-                                <css>SLASHSTAR_STYLE</css>
-                            </mapping>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-
-        </profile>
-
-    </profiles>
 
 </project>

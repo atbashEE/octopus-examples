@@ -7,7 +7,7 @@ Contains some code examples of features of Octopus.
 
 /scs [Self-Contained System demo](https://www.atbash.be/2017/09/28/release_octopus_v097/) _see section Self-Contained Systems in the blog_
 
-/sessionHijacking [Session Hijacking protection demo](http://www.atbash.be/2017/11/06/session-hijacking-protection-with-octopus-framework/)
+/sessionHijacking [Session Hijacking protection demo](https://www.atbash.be/2017/11/06/session-hijacking-protection-with-octopus-framework/)
 
 ## gitbook directory
 
@@ -39,9 +39,15 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 
 /ex4 [Securing EJB methods](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter4.html)
 
-/ex5_srv [Server app with JAX-RS endpoint](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter5.html) _Building Octopus security context from JT within header_
+/ex5_srv [Server app with JAX-RS endpoint](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter5.html) _Building Octopus security context from JWT within header_
 
 /ex5 [Client app calling JAX-RS endpoint](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter5.html) _Adding JWT with authentication/authorization info about user automatically to JAX-RS client call_
+
+/ex6 [Authentication using Hashed passwords stored in DB](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-6.html)
+
+/ex6_alt1[Key derivation functions as passwords](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-6.html) Chapter6 alternative 1
+
+/ex6_alt2[HEX encoded hashed passwords](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-6.html) Chapter6 alternative 2
 
 ## tests directory
 

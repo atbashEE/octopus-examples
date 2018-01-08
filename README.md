@@ -9,6 +9,8 @@ Contains some code examples of features of Octopus.
 
 /sessionHijacking [Session Hijacking protection demo](https://www.atbash.be/2017/11/06/session-hijacking-protection-with-octopus-framework/)
 
+/octopus-soteria [Java EE Security API integration with Octopus]( http://www.atbash.be/2018/01/08/java-ee-security-api-integration-with-octopus)
+
 ## gitbook directory
 
 Contains the code examples which are created in the GitBook "Octopus cookbook".

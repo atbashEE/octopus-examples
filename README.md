@@ -51,6 +51,10 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 
 /ex6_alt2[HEX encoded hashed passwords](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-6.html) Chapter6 alternative 2
 
+/ex7 [Remember-me functionality](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-7.html)
+
+/ex7_alt1[Configuration of the cookie of remember-me](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-7.html) Chapter7 alternative 1
+
 ## tests directory
 
 Some additional projects for testing

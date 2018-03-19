@@ -55,6 +55,8 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 
 /ex7_alt1[Configuration of the cookie of remember-me](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-7.html) Chapter7 alternative 1
 
+/ex8 [authentication/authorization with LDAP](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-8.html)
+
 ## tests directory
 
 Some additional projects for testing

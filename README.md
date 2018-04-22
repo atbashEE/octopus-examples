@@ -57,6 +57,12 @@ Contains the code examples which are created in the GitBook "Octopus cookbook".
 
 /ex8 [authentication/authorization with LDAP](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-8.html)
 
+/ex9 [authentication/authorization with Google OAuth2 / OpenIdConnect](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-9.html)
+
+/ex9_alt1 [authentication/authorization with Github OAuth2 / OpenIdConnect](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-9.html) Chapter9 alternative 1
+
+/ex9_alt2 [authentication/authorization with multiple OAuth2 / OpenIdConnect](https://rdebusscher.gitbooks.io/octopus-cookbook/content/chapter-9.html) Chapter9 alternative 2
+
 ## tests directory
 
 Some additional projects for testing

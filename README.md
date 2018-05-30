@@ -11,6 +11,9 @@ Contains some code examples of features of Octopus.
 
 /octopus-soteria [Java EE Security API integration with Octopus]( http://www.atbash.be/2018/01/08/java-ee-security-api-integration-with-octopus)
 
+/dynamicFilterChain  
+Custom FilterChainManager for custom loading of filter chain definitions and dynamically applying them.
+
 ## gitbook directory
 
 Contains the code examples which are created in the GitBook "Octopus cookbook".

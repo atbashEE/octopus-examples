@@ -27,21 +27,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <octopus.version>0.9.7</octopus.version>
-        <deltaspike.version>1.7.0</deltaspike.version>
-        <primefaces.version>6.0</primefaces.version>
+        <octopus.version>0.4-SNAPSHOT</octopus.version>
+        <atbash-config.version>0.9.2-SNAPSHOT</atbash-config.version>
+        <deltaspike.version>1.8.1</deltaspike.version>
+        <primefaces.version>6.1</primefaces.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>Bintray_JCenter</id>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-
-    </repositories>
-
     <inceptionYear>2017</inceptionYear>
-
 
     <dependencies>
         <dependency>
@@ -58,9 +50,15 @@
         </dependency>
 
         <dependency>
-            <groupId>be.c4j.ee.security.octopus</groupId>
-            <artifactId>octopus-javaee7-jsf</artifactId>
+            <groupId>be.atbash.ee.security</groupId>
+            <artifactId>octopus-jsf7</artifactId>
             <version>${octopus.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>be.atbash.config</groupId>
+            <artifactId>geronimo-config</artifactId>
+            <version>${atbash-config.version}</version>
         </dependency>
 
         <dependency>
@@ -95,51 +93,41 @@
     <build>
         <finalName>session-hijacking</finalName>
 
+        <plugins>
+
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <header>header_template.tpl</header>
+                    <properties>
+                        <owner>Rudy De Busscher</owner>
+                        <site>www.atbash.be</site>
+                        <year>2017</year>
+                        <aggregate>true</aggregate>
+                    </properties>
+                    <excludes>
+                        <exclude>**/README</exclude>
+                        <exclude>**/LICENSE.txt</exclude>
+                        <exclude>**/NOTICE.txt</exclude>
+                        <exclude>**/NOTICE</exclude>
+                        <exclude>**/*.md</exclude>
+                    </excludes>
+                    <mapping>
+                        <java>SLASHSTAR_STYLE</java>
+                        <css>SLASHSTAR_STYLE</css>
+                    </mapping>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>license</id>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>com.mycila</groupId>
-                        <artifactId>license-maven-plugin</artifactId>
-                        <version>3.0</version>
-                        <configuration>
-                            <header>header_template.tpl</header>
-                            <properties>
-                                <owner>Rudy De Busscher</owner>
-                                <site>www.atbash.be</site>
-                                <year>2017</year>
-                                <aggregate>true</aggregate>
-                            </properties>
-                            <excludes>
-                                <exclude>**/README</exclude>
-                                <exclude>**/LICENSE.txt</exclude>
-                                <exclude>**/NOTICE.txt</exclude>
-                                <exclude>**/NOTICE</exclude>
-                                <exclude>**/*.md</exclude>
-                            </excludes>
-                            <mapping>
-                                <java>SLASHSTAR_STYLE</java>
-                                <css>SLASHSTAR_STYLE</css>
-                            </mapping>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-
-        </profile>
-
-    </profiles>
 
 </project>

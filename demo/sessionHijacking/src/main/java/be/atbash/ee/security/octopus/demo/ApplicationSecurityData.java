@@ -15,13 +15,11 @@
  */
 package be.atbash.ee.security.octopus.demo;
 
-import be.c4j.ee.security.realm.AuthenticationInfoBuilder;
-import be.c4j.ee.security.realm.SecurityDataProvider;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.subject.PrincipalCollection;
+import be.atbash.ee.security.octopus.authc.AuthenticationInfo;
+import be.atbash.ee.security.octopus.authc.AuthenticationInfoProvider;
+import be.atbash.ee.security.octopus.realm.AuthenticationInfoBuilder;
+import be.atbash.ee.security.octopus.token.AuthenticationToken;
+import be.atbash.ee.security.octopus.token.UsernamePasswordToken;
 
 import javax.enterprise.context.ApplicationScoped;
 
@@ -29,7 +27,7 @@ import javax.enterprise.context.ApplicationScoped;
  *
  */
 @ApplicationScoped
-public class ApplicationSecurityData implements SecurityDataProvider {
+public class ApplicationSecurityData implements AuthenticationInfoProvider {
 
     private int principalId = 0;
 
@@ -46,11 +44,6 @@ public class ApplicationSecurityData implements SecurityDataProvider {
             return authenticationInfoBuilder.build();
         }
 
-        return null;
-    }
-
-    @Override
-    public AuthorizationInfo getAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
 
